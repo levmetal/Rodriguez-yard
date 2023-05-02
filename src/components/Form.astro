@@ -3,33 +3,45 @@ import imgform from "../assets/formimg.webp";
 ---
 
 <section class="getoffer" id="getoffer">
-    <img src={imgform} alt="A car being towed away" class="imgform" />
+    <img src={imgform} alt="A car being towed away" class="imgform" loading="lazy"/>
     <div class="container__form">
         <h2 class="section__title"><span>Get an offer</span></h2>
-        <form class="getoffer__form">
-            <label for="nombre">Full Name:</label>
-            <input type="text" id="nombre" name="nombre" required />
-            <label for="phone">Phone:</label>
-            <input
+        <form class="getoffer__form" action="https://api.web3forms.com/submit" method="POST">
+            
+            <input type="hidden" name="access_key" value=3583197a-7143-4414-b21e-527d77cfd62a>
+            <label for="nombre">Full Name:
+
+                <input type="text" id="nombre" name="nombre" required />
+            </label>
+            <label for="phone">Phone: 
+
+                <input
                 type="number"
                 id="phone"
                 name="phone"
                 required
                 class="input__tel"
-            />
+                />
+            </label>
 
-            <label for="phone">zip-code:</label>
-            <input type="text" id="zip-code" name="zip-code" required />
-            <label for="correo">E-mail:</label>
-            <input type="email" id="correo" name="correo" required />
-            <label for="descripcion">Vehicle Descripcion:</label>
-            <textarea
+            <label for="phone">zip-code:
+
+                <input type="text" id="zip-code" name="zip-code" required />
+            </label>
+            <label for="correo">E-mail:
+
+                <input type="email" id="correo" name="correo" required />
+            </label>
+            <label for="descripcion">Vehicle Descripcion:
+
+                <textarea
                 id="descripcion"
                 name="descripcion"
                 class="textarea"
                 required></textarea>
-
-            <input type="button" value="Get an Offer" class="cta" />
+            </label>
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <input type="submit" value="Get an Offer" class="cta" />
         </form>
     </div>
 </section>
