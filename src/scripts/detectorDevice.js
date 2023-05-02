@@ -4,7 +4,7 @@ const isDesktop = () => {
     return !mobileKeywords.some(keyword => userAgent.includes(keyword));
     }
     function handleModal(){
-    console.log("clic");
+   
     const openModalBtn = document.getElementById("open-modal-btn");
     const modal = document.getElementById("modal");
     const closeBtn = document.getElementsByClassName("close")[0];
