@@ -1,0 +1,147 @@
+---
+import quote from '../assets/quote.svg'
+import menavatar from '../assets/men.png'
+import menavatar2 from '../assets/men2.png'
+import womenavatar from '../assets/women.png'
+---
+
+<section class="testimonials" id="testimonials">
+    <h2 class="testimonials__title">
+        <span> testimonials</span>
+    </h2>
+    <article class="testimonials__card">
+        
+        <img src={menavatar} alt="men avatar" class="avatar">
+        <p >I was skeptical at first, but this company exceeded my
+            expectations. They gave me a fair price for my old car and made
+            the process incredibly easy. The pickup was scheduled at my
+            convenience, and they arrived on time. I highly recommend this
+            company for anyone looking to sell their old cars in <strong> North
+            s Carolina - Mark T., 38, Charlotte.</strong> </p>
+            <img src={quote} alt="quote symbol" class="quote">
+    </article>
+    <article class="testimonials__card">
+        
+        <img src={menavatar2} alt="men avatar" class="avatar">
+        <p >I had a great experience with this company. They were
+            professional, friendly, and easy to work with. They gave me a fair
+            price for my old car, and the pickup was hassle-free. I
+            appreciated their transparency and honesty throughout the
+            entire process. I highly recommend this company to anyone
+            looking to sell their junk cars in <strong> North Carolina! - Thomas W.,
+            45, Durham. </strong></p>
+            <img src={quote} alt="quote symbol" class="quote">
+    </article>
+    <article class="testimonials__card">
+        
+        <img src={womenavatar} alt="women avatar" class="avatar">
+        <p >I had a really old car that had been sitting in my garage for
+            years, and I didn't know what to do with it. I came across this
+            company and decided to give them a try. I was pleasantly
+            surprised by how easy the process was. They came to pick up
+            my car and gave me a fair price for it. I highly recommend this
+            company to anyone looking to get rid of their old cars <strong> North
+            s Carolina  - Emily. L, 27 </strong> </p>
+            <img src={quote} alt="quote symbol" class="quote">
+    </article>
+</section>
+
+<style>
+    .testimonials{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        height: auto;
+        margin-bottom: 5rem;
+        padding: 2em 8em;
+    }
+.testimonials__title {
+        display: flex;
+        justify-content: center;
+        font-family: var(--fontBrand);
+        font-size: 2rem;
+        font-weight: 500;
+        width: 100%;
+        border-top: solid var(--white) 1px;
+        color:var(--white);
+        
+    }
+
+    .testimonials__title span {
+        
+        background: var(--primaryColor);
+        padding: 0 1.5rem;
+        margin-top: -1.2rem;
+        
+    }
+
+    .testimonials__card{
+        position:relative;
+        display: flex;
+        width: 70%;
+        justify-content: space-around;
+        align-items: center;
+       
+        margin: 2rem auto;
+
+    }
+    .testimonials__card .avatar {
+        height: 7rem;
+        width: auto;
+    }
+    .testimonials__card p{
+        width: 60ch;
+        margin-right: 2rem;
+    }
+    .quote{
+        position:absolute;
+        right: 0;
+        top: -5rem;
+
+    }
+    @media screen and (max-width:835px){
+        .testimonials{
+       
+            padding: 2em 1em;
+        }
+        .testimonials__card {
+           margin: 2rem auto;
+           width: 70%
+            
+        }
+    .testimonials__card .avatar {
+        margin-right:2em ;
+    }
+    }
+    .testimonials__card p {
+        line-height: 24px;
+        
+    }
+    .quote{
+        position:absolute;
+        right: -4em;
+        top: -3em;
+        
+
+    }
+    @media screen and (max-width: 700px){
+        .testimonials{
+       
+       padding: 2em 1rem;
+   }
+        .testimonials__card{
+            flex-direction: column;
+            gap: 2.5rem;
+            padding: 0;
+        }
+        .testimonials__card p {
+        line-height: 24px;
+           width: 28ch;
+            margin: 0;
+    }
+    .quote{
+        top: 5rem;
+    }
+
+    }
+</style>

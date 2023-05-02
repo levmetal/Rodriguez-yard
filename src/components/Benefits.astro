@@ -1,0 +1,166 @@
+---
+import money from "../assets/save-money.webp";
+import time from "../assets/time.webp";
+import envioroment from "../assets/envioroment.webp";
+---
+
+<section class="benefits" id="benefits">
+    <h2 class="benefits__title">
+        <span> BENEFITS</span>
+    </h2>
+    <div class="benefits__container">
+        <article class="container__card">
+            <div class="title-img">
+                <h3>MONEY</h3>
+                <img src={money} alt="person saving money" />
+            </div>
+            <p>
+                There's nothing better than receiving your payment immediately. Our sales process is fast and hassle-free.
+            </p>
+        </article>
+
+        <article class="container__card">
+            <div class="title-img">
+                <h3>TIME</h3>
+                <img src={time} alt="person resting" />
+            </div>
+            <p>
+                At our company, we strive to simplify the otherwise tedious and complicated process. 
+            </p>
+        </article>
+
+        <article class="container__card">
+            <div class="title-img">
+                <h3>EVIROMENT</h3>
+                <img src={envioroment} alt="ecofriendly symbol" />
+            </div>
+            <p class="card_description">
+                Sell your junk car and support environmental preservation
+            </p>
+        </article>
+    </div>
+</section>
+
+<style>
+    .benefits {
+        height: auto;
+        background-color: var(--secundaryColor);
+        padding: 1.5em 8em;
+       
+    }
+    .benefits__title {
+        display: flex;
+        justify-content: center;
+        font-family: var(--fontBrand);
+        font-size:2rem;
+        font-weight: 500;
+        width: 100%;
+        border-top: solid var(--darkletter) 1px;
+        color:var(--darkletter);
+    }
+
+    .benefits__title span {
+        
+        background: var(--secundaryColor);
+        padding: 0 1.5rem;
+        margin-top: -.6rem;
+    }
+
+    .benefits__container {
+        display: flex;
+        justify-content: space-around;
+        gap: 0;
+    }
+    .container__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        margin-top: 3.5rem;
+    }
+    .container__card p {
+        text-align: center;
+        width: 30ch;
+    }
+
+    .container__card .title-img {
+        position: relative;
+    }
+    .container__card .title-img h3 {
+        position: absolute;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.5rem;
+        width: 10rem;
+        top: -2.7rem;
+        left: -3.5rem;
+
+        border-radius: 0.2rem;
+        font-family: var(--fontBrand);
+        font-weight: 500;
+        font-size: 1.5rem;
+        background: var(--primaryColor);
+    }
+    .container__card .title-img img {
+        border-radius: 0.2rem;
+        box-shadow: 0 2px 4px rgba(0, 66, 85, 0.1);
+    }
+    .container__card p{
+        color:var(--darkletter);
+    }
+    @media screen and (max-width: 834px){
+        .benefits{
+            padding: 2.5em 0 7rem 0;
+       
+        }
+        .benefits__container{
+            flex-direction: column;
+        }
+        .container__card{
+            flex-direction: row;
+            justify-content: space-around;
+            
+        }
+        .title-img{
+            padding-left: 4rem;
+        }
+        .container__card .title-img h3{
+            left: 0;
+        }
+        .container__card p{
+            text-align: left;
+            font-size: 1.2rem;
+            width: 30ch;
+            line-height: 28.8px;
+            
+        }
+    }
+    @media (max-width: 700px) {
+      
+        .benefits__container{
+            gap: 3rem;
+        }
+        .container__card{
+            flex-direction: column;
+            justify-content: space-around;
+            
+        }
+        .title-img{
+            padding-left: 0rem;
+        }
+        .container__card .title-img h3{
+            left: -3.2rem;
+        }
+        .container__card p{
+            
+            font-size: 1rem;
+            width: 25ch;
+            line-height: 28.8px;
+            margin-left: 4rem;
+            
+        }
+        
+    }
+</style>

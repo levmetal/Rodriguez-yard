@@ -1,0 +1,95 @@
+---
+import imgfooter from "../assets/imgfooter.webp";
+---
+
+<footer class="footer">
+    <section class="footer__nav">
+       
+        <a href="/">
+            <img src="logo.svg" alt="Company Logo" class="logo" />
+        </a>
+           <ul class="nav__list">
+            <li><a href="#hero" class="nav__link2">Home</a></li>
+            <li><a href="#benefits" class="nav__link2">Benefits</a></li>
+            <li><a href="#how" class="nav__link2">How it works</a></li>
+            <li><a href="#testimonials" class="nav__link2">Testimonials</a></li>
+        </ul>
+        
+
+    </section>
+    <img src={imgfooter} alt="junk cars" class="imgfooter">
+</footer>
+<script src="../scripts/navigator.ts"></script>
+
+<style>
+
+    .footer{
+        display: flex;
+        background: var(--darkletter);
+        
+    }
+    .footer__nav{
+        flex: 1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: auto;
+       
+    }
+    .footer__nav .logo {
+       margin-bottom: 4rem;
+       margin-left: 2rem;
+        height: 8rem;
+        width: auto;
+    }
+    
+    
+    .nav__list{
+        font-family: var(--fontBrand);
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5.5rem;
+        margin-right: 4rem;
+        padding: 0;
+        gap: 1rem;
+    }
+    .imgfooter{
+        
+        width: 50%;
+        height: auto;
+    }
+
+    @media screen and (max-width:835px) {
+        .footer{
+            
+           
+           height: 20rem;
+        }
+        .imgfooter{
+            height: auto;
+            object-fit: cover;
+            width: 30%;
+            
+        }
+    }
+    @media screen and (max-width:700px){
+        .footer{
+            
+           
+            padding: 6rem 0;
+        }
+        .footer__nav{
+            flex-direction: column;
+            
+        }
+        .imgfooter{
+            display: none;
+            
+        }
+        .nav__list{
+            margin-top: -1rem;
+            margin-left: -4rem;
+            font-size: 20px;
+        }
+    }
+</style>

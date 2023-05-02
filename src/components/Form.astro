@@ -1,0 +1,148 @@
+---
+import imgform from "../assets/formimg.webp";
+---
+
+<section class="getoffer" id="getoffer">
+    <img src={imgform} alt="A car being towed away" class="imgform" />
+    <div class="container__form">
+        <h2 class="section__title"><span>Get an offer</span></h2>
+        <form class="getoffer__form">
+            <label for="nombre">Full Name:</label>
+            <input type="text" id="nombre" name="nombre" required />
+            <label for="phone">Phone:</label>
+            <input
+                type="number"
+                id="phone"
+                name="phone"
+                required
+                class="input__tel"
+            />
+
+            <label for="phone">zip-code:</label>
+            <input type="text" id="zip-code" name="zip-code" required />
+            <label for="correo">E-mail:</label>
+            <input type="email" id="correo" name="correo" required />
+            <label for="descripcion">Vehicle Descripcion:</label>
+            <textarea
+                id="descripcion"
+                name="descripcion"
+                class="textarea"
+                required></textarea>
+
+            <input type="button" value="Get an Offer" class="cta" />
+        </form>
+    </div>
+</section>
+
+<style>
+    .input__tel::-webkit-outer-spin-button,
+    .input__tel::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .input__tel {
+        -moz-appearance: textfield;
+    }
+    .textarea{
+        border: none;
+    }
+    .getoffer {
+        display: flex;
+        justify-content: space-between;
+        gap: 0;
+        width: 100%;
+        height: auto;
+
+        font-family: "Montserrat", sans-serif;
+    }
+    .section__title {
+        display: flex;
+        justify-content: center;
+        font-family: var(--fontBrand);
+        font-size: 2rem;
+        font-weight: 500;
+        width: 100%;
+        border-top: solid var(--darkletter) 1px;
+        color: var(--darkletter);
+        margin-top: 3rem;
+    }
+    .section__title span {
+        background: var(--secundaryColor);
+        padding: 0 1.5rem;
+        margin-top: -1.2rem;
+    }
+
+    .imgform,
+    .container__form {
+        flex: 1;
+
+        background-color: var(--secundaryColor);
+    }
+    .imgform {
+        width: 50%;
+        object-fit: cover;
+    }
+    .getoffer__form {
+        width: 70%;
+
+        margin: 0 auto;
+        margin-top: 6rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        height: 2rem;
+        margin-bottom: 1rem;
+        border: none;
+    }
+    textarea {
+        width: 100%;
+        height: 8rem;
+        resize: none;
+    }
+
+    label {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--darkletter);
+    }
+    .cta {
+        display: flex;
+        justify-content: center;
+        color: var(--white);
+        align-items: center;
+        font-family: var(--fontBrand);
+        font-size: var(--fontSizeButtom);
+        height: var(--heightButtom);
+        width: var(--widhtButtom);
+        background-color: var(--terciaryColor);
+        border-radius: 0.2rem;
+        border: none;
+        margin-top: 2rem;
+        transition: 500ms;
+    }
+    .cta:hover {
+        cursor: pointer;
+        box-shadow: 8px 8px 0px 0 rgba(0, 66, 85, 0.3);
+        -webkit-box-shadow: 8px 8px 0px 0 rgba(0, 66, 85, 0.3);
+        -moz-box-shadow: 8px 8px 0px 0 rgba(0, 66, 85, 0.3);
+    }
+
+    @media screen and (max-width: 700px) {
+        .getoffer .imgform {
+            display: none;
+        }
+        .cta {
+            width: 100%;
+            height: 3.5rem;
+            font-size: 20px;
+            padding: 0;
+        }
+    }
+</style>

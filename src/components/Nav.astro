@@ -1,0 +1,314 @@
+---
+import iconphone from "../assets/phone.svg";
+---
+
+<header class="navbar">
+  <a href="/">
+    <img src="logo.svg" alt="Company Logo" class="logo" />
+  </a>
+  <nav class="navbar__nav">
+    <span class="close">X</span>
+    <ul class="nav__list">
+      <li><a href="#hero" class="nav__link">Home</a></li>
+      <li><a href="#benefits" class="nav__link">Benefits</a></li>
+      <li><a href="#how" class="nav__link">How it works</a></li>
+      <li><a href="#testimonials" class="nav__link">Testimonials</a></li>
+    </ul>
+  </nav>
+
+  <button id="open-modal-btn" class="navbar__cta--phone alert"
+    >1+900 9546 <img
+      class="iconphone"
+      src={iconphone}
+      alt="icon phone"
+    /></button
+  >
+  <button class="navbar__menu-toggle" aria-label="Toggle menu">
+    <svg
+      class="icon_close"
+      xmlns="http://www.w3.org/2000/svg"
+      height="48"
+      viewBox="0 96 960 960"
+      width="48"
+      ><path
+        d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+      ></path>
+    </svg>
+
+    <svg
+      class="icon_menu"
+      xmlns="http://www.w3.org/2000/svg"
+      height="48"
+      viewBox="0 96 960 960"
+      width="48"
+    >
+      <path
+        d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
+      ></path></svg
+    >
+  </button>
+</header>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>You are in the desktop !</h2>
+    <p>
+      Go and call us to the <strong>( 1+900 9546 )</strong> or fill the form in get
+      an offer !
+    </p>
+    <a href="#getoffer" id="open-modal-btn" class="navbar__cta--phone ctabtn">
+      Get an Offer</a
+    >
+  </div>
+</div>
+
+<script src="../scripts/detectorDevice.js"></script>
+<script src="../scripts/navigator.ts"></script>
+<script src="../scripts/menuHandle.js"></script>
+
+<style>
+  .icon_menu,
+  .icon_close {
+    fill: #fff;
+  }
+  .navbar__menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+  }
+  .close {
+    display: none;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    background-color: var(--primaryColor);
+    margin: 10% auto;
+    padding: 20px;
+    border: none;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    height: 40vh;
+  }
+  .modal-content h2 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 35px;
+  }
+  .modal-content p {
+    font-size: 1em;
+    width: 30ch;
+    text-align: center;
+    line-height: 28.5px;
+    margin-top: -1rem;
+  }
+  .ctabtn {
+    margin-right: 0 !important;
+  }
+
+  .close {
+    position: absolute;
+    color: var(--white);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    margin-right: 1em;
+    margin-top: 0.5em;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+
+    background: rgba(0, 67, 85, 0.6);
+    backdrop-filter: blur(5px);
+
+    justify-content: space-between;
+    align-items: center;
+    height: 7.5rem;
+    padding: var(--paddingAlign);
+  }
+  .logo {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .nav__list {
+    display: flex;
+    font-size: calc(1.5vw);
+    gap: 1.8rem;
+    width: 20%;
+    margin-right: 2rem;
+    white-space: nowrap;
+  }
+  .navbar__cta--phone {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fontBrand);
+    font-size: calc(2vw);
+    width: calc(16vw);
+    height: var(--heightButtom);
+    background: var(--terciaryColor);
+    border: none;
+    border-radius: 0.2rem;
+    margin-right: -2rem;
+    color: var(--white);
+    white-space: nowrap;
+    transition: 500ms;
+  }
+  .navbar__cta--phone:hover {
+    cursor: pointer;
+    box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
+    -webkit-box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
+    -moz-box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
+  }
+
+  .navbar__cta--phone:hover .iconphone {
+    animation: shake 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: rotate(0);
+    }
+    10% {
+      transform: rotate(8deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(6deg);
+    }
+    40% {
+      transform: rotate(-6deg);
+    }
+    50% {
+      transform: rotate(4deg);
+    }
+    60% {
+      transform: rotate(-4deg);
+    }
+    70% {
+      transform: rotate(2deg);
+    }
+    80% {
+      transform: rotate(-2deg);
+    }
+    90% {
+      transform: rotate(1deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  @media screen and (max-width: 834px) {
+    .navbar {
+      padding: 0;
+
+      gap: 0;
+    }
+    .logo {
+      margin-left: 1rem;
+    }
+    .nav__list {
+      padding: 0;
+    }
+
+    .nav__link {
+      font-size: 1rem;
+    }
+    .navbar__cta--phone {
+      margin-right: 1rem;
+      height: 44px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .navbar__menu-toggle {
+      margin-top: 2rem;
+    }
+    .navbar__menu-toggle .icon_close {
+      display: none;
+    }
+    .navbar__menu-toggle .show_close {
+      display: block;
+      z-index: 10000;
+    }
+    .remove_menu {
+      display: none;
+    }
+
+    .navbar__nav {
+      display: none;
+    }
+
+    .navbar__nav.show {
+      display: block;
+    }
+
+    .navbar__cta--phone {
+      display: none;
+    }
+    .nav__list {
+      justify-content: center;
+      padding: 1rem 1rem;
+      position: absolute;
+      top: -1rem;
+      right: 0;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+      color: black;
+      background: #00252edc;
+      transform: translateX(2.5rem);
+      color: #fff;
+     
+    }
+    .nav__link {
+      font-size: 25px;
+      margin-left: 30%;
+      
+    }
+    .navbar__menu-toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      margin-right: 3rem;
+    }
+
+    .show {
+      display: flex;
+    }
+  }
+</style>

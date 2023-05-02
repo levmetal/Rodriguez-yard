@@ -1,0 +1,159 @@
+---
+import form from "../assets/form.svg";
+import handshake from "../assets/handshake.svg";
+import paid from "../assets/paid.svg";
+import arrow from "../assets/arrow.svg";
+---
+
+<section class="howitworks" id="how">
+    <h2 class="howitworks__title">
+        <span> How it works</span>
+    </h2>
+
+    <div class="container__card">
+        <article class="card">
+            <h3>get a offer for your vehicle</h3>
+            <img src={form} alt="icon of form" />
+            <p>
+                Go to <strong> Get an Offer </strong> and enter the necessary information to
+                receive an offer for your vehicle.
+            </p>
+        </article>
+        <img class="arrow" src={arrow} alt="icon of arrow" />
+        <article class="card">
+            <h3>Receive an offer from us</h3>
+            <img src={handshake} alt="icon of handshake" />
+            <p>
+                When we receive your information, we will send you the offer or
+                proceed to call you
+            </p>
+        </article>
+        <img class="arrow" src={arrow} alt="icon of arrow" />
+
+        <article class="card">
+            <h3>get paid</h3>
+            <img src={paid} alt="icon of dollar" />
+            <p>
+                When you accept the offer quickly, the terms of the deal you'll
+                have your money promptly
+            </p>
+        </article>
+    </div>
+</section>
+
+<style>
+    .howitworks {
+        height: auto;
+        background-color: var(--primaryColor);
+        padding: 2.5em 8em;
+    }
+    .howitworks__title{
+        display: flex;
+        justify-content: center;
+        font-family: var(--fontBrand);
+        font-size: 2rem;
+        font-weight: 500;
+        width: 100%;
+        border-top: solid var(--white) 1px;
+        color:var(--white);
+    }
+    .howitworks__title span{
+        background: var(--primaryColor);
+        padding: 0 1.5rem;
+        margin-top: -1.2rem;
+    }
+    .container__card{
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.5em 0;
+
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        height: 22rem;
+        width: calc(32vw);
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 1.5rem;
+        border-radius: .2rem;
+        text-align: center;
+        background: var(--terciaryColor);
+
+    }
+    .card h3{
+        font-family: var(--fontBrand);
+        font-size: calc(2vw);
+        font-weight: 500;
+    }
+    .card img{
+        max-width: 5rem;
+        max-height: 5rem;
+    }
+    .card p{
+        font-size: calc(1.5vw);
+        line-height: 1.1em;
+    }
+    .arrow{
+        max-width: 6rem;
+        max-height: 6rem;
+    }
+
+    @media screen and (max-width: 834px){
+        .howitworks {
+       padding: 2rem 1rem;
+    }
+    .arrow{
+        max-width: 4rem;
+        max-height: 4rem;
+    }
+    .card p{
+        font-size: calc(1.5vw);
+        line-height: 1.1em;
+        text-align: start;
+    }
+    }
+    @media screen and (max-width: 700px){
+        .howitworks {
+       padding: 2rem 0;
+       height: auto;
+        
+    }
+    .container__card{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .card{
+        height: auto;
+        width: 60%;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    .card h3{
+        font-family: var(--fontBrand);
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .card img{
+        max-width: 5rem;
+        max-height: 5rem;
+        margin-top: -2rem;
+    }
+    .card p{
+        
+        font-size: 16px;
+        line-height: 24px;
+        
+    }
+    .arrow{
+        max-width: 3rem;
+        max-height: 3rem;
+        transform: rotate(90deg);
+    }
+    }
+    
+</style>

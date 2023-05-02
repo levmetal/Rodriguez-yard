@@ -1,0 +1,226 @@
+---
+import heroImage from "../assets/hero-car.webp";
+import iconphone from "../assets/phone.svg";
+---
+
+<section class="hero" id="hero">
+  <section class="hero__info">
+    <h1 class="hero__title">
+      <span>Sell</span> Fast and get <span>cash</span>
+    </h1>
+    <p class="hero-description">
+      Sell your used or junk car for cash quickly and easily. Get an offer online or call us today.
+    </p>
+    <section class="hero__buttons">
+      <button type="button" class="hero__button hero__button--call"
+        >1+900 9546<img
+          class="iconphone"
+          src={iconphone}
+          alt="icon phone"
+        /></button
+      >
+      <a class="hero__button" href="#getoffer">Get an Offer</a>
+    </section>
+  </section>
+  <img class="hero__image" src={heroImage} alt="A car being towed away." />
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: calc(100vh - 8rem);
+    width: 100%;
+  }
+  .hero__info {
+    position: relative;
+    height: 100%;
+    margin-right: 0;
+    text-align: left;
+
+    margin-left: 8em;
+    width: 50%;
+    z-index: 10;
+  }
+  .hero__title,
+  .hero-description {
+    text-align: start;
+    margin-left: var(--paddingAlign);
+  }
+
+  .hero__info .hero__title {
+    font-family: var(--fontBrand);
+    font-size: 64px;
+    width: 18ch;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+  .hero__info .hero__title span {
+    color: var(--secundaryColor);
+  }
+  .hero__info .hero-description {
+    width: 45ch;
+    line-height: 1.5em;
+  }
+
+  .hero__buttons {
+    display: flex;
+    gap: 2.1rem;
+    margin-top: 3rem;
+    
+  }
+  .hero__buttons .hero__button--call {
+    display: none;
+    background-color: transparent !important;
+    border: solid 2px var(--terciaryColor) !important;
+
+    gap: 1rem;
+  }
+  .hero__button--call:hover .iconphone {
+    animation: shake 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: rotate(0);
+    }
+    10% {
+      transform: rotate(8deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(6deg);
+    }
+    40% {
+      transform: rotate(-6deg);
+    }
+    50% {
+      transform: rotate(4deg);
+    }
+    60% {
+      transform: rotate(-4deg);
+    }
+    70% {
+      transform: rotate(2deg);
+    }
+    80% {
+      transform: rotate(-2deg);
+    }
+    90% {
+      transform: rotate(1deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  .hero__button {
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    align-items: center;
+    font-family: var(--fontBrand);
+    font-size: calc(2vw);
+    height: var(--heightButtom);
+    width: var(--widhtButton);
+    padding: 0 1rem;
+    background-color: var(--terciaryColor);
+    border-radius: 0.2rem;
+    border: none;
+    letter-spacing: 0.1rem;
+    white-space: nowrap; 
+    transition: 500ms;
+  }
+  .hero__button:hover {
+    cursor: pointer;
+    box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
+    -webkit-box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
+    -moz-box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
+  }
+
+  .hero__image {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    max-width: 50%;
+    height: auto;
+  }
+
+  @media (max-width: 834px) {
+    .hero {
+      height: 650px;
+    }
+    .hero__info {
+      margin: 0;
+      padding-left: 2rem;
+    }
+
+    .hero__info .hero-description {
+      font-size: 1.2em;
+      line-height: 28.8px;
+      width: 34ch;
+      height: auto;
+    }
+    .hero__buttons {
+      bottom: 17rem;
+      width: calc(40vw);
+      padding: 0;
+    }
+    .hero__button {
+      height: 44px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      height: 100vh;
+    }
+    .hero__image {
+      display: none;
+    }
+    .hero__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0rem;
+    }
+    .hero__info .hero__title {
+      text-align: center;
+      font-size: 45px;
+    }
+    .hero__info .hero-description {
+      font-size: 16px;
+      line-height: 24px;
+      width: 28ch;
+      text-align: center;
+    }
+
+    .hero__buttons {
+      position: relative;
+      bottom: -3rem;
+      margin: 0 auto;
+      flex-direction: column;
+      width: auto;
+      
+    }
+
+    .hero__button {
+      display: flex;
+      width: 10rem;
+      height: 3.5rem;
+      font-size: 20px;
+      
+    }
+    .hero__buttons .hero__button--call  {
+      display: flex;
+      width: 12rem;
+      gap: 2rem;
+    }
+  }
+</style>
