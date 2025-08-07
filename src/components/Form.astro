@@ -6,18 +6,10 @@ import imgform from "../assets/formimg.webp";
     <img src={imgform} alt="A car being towed away" class="imgform" />
     <div class="container__form">
         <h2 class="section__title"><span>Get an offer</span></h2>
-        <form
-            class="getoffer__form"
-            action="https://api.web3forms.com/submit"
-            method="POST"
-        >
-            <input
-                type="hidden"
-                name="access_key"
-                value="ddbd913a-162d-40f8-82f9-83578a866017"
-            />
-            <label for="name"
-                >Full Name:
+        <form class="getoffer__form" action="https://api.web3forms.com/submit" method="POST">
+            
+            <input type="hidden" name="access_key" value="4142ef25-3bac-4eda-b8af-49b6f7b64e44">
+            <label for="name">Full Name:
 
                 <input type="text" id="name" name="name" required  placeholder="Write your name"/>
             </label>
@@ -37,7 +29,7 @@ import imgform from "../assets/formimg.webp";
             <label for="email"
                 >E-mail:
 
-                <input type="email" id="coemailrreo" name="email" required  placeholder="Write your email"/>
+                <input type="email" id="email" name="email" required  placeholder="Write your email"/>
             </label>
             <label for="make">
                 Make it by:
@@ -104,8 +96,7 @@ import imgform from "../assets/formimg.webp";
             </div>
            
 
-            <label for="description"
-                >Vehicle Details:
+            <label for="description">Vehicle Description:
 
                 <textarea
                     id="description"
