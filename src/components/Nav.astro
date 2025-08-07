@@ -1,5 +1,6 @@
 ---
 import iconphone from "../assets/phone.svg";
+import iconmsg from "../assets/mail.svg";
 ---
 
 <header class="navbar">
@@ -7,9 +8,9 @@ import iconphone from "../assets/phone.svg";
     <img src="logo.svg" alt="Company Logo" class="logo" />
   </a>
   <nav class="navbar__nav">
-    <span class="close">X</span>
     <ul class="nav__list">
       <li><a href="#hero" class="nav__link">Home</a></li>
+      <li><a href="#services" class="nav__link">Services</a></li>
       <li><a href="#benefits" class="nav__link">Benefits</a></li>
       <li><a href="#how" class="nav__link">How it works</a></li>
       <li><a href="#testimonials" class="nav__link">Testimonials</a></li>
@@ -17,12 +18,10 @@ import iconphone from "../assets/phone.svg";
   </nav>
 
   <button id="open-modal-btn" class="navbar__cta--phone alert"
-    >1+900 9546 <img
-      class="iconphone"
-      src={iconphone}
-      alt="icon phone"
-    /></button
-  >
+    ><img class="iconphone" src={iconphone} alt="icon phone" />
+    or
+    <img class="iconmsg" src={iconmsg} alt="icon message" />
+  </button>
   <button class="navbar__menu-toggle" aria-label="Toggle menu">
     <svg
       class="icon_close"
@@ -52,11 +51,23 @@ import iconphone from "../assets/phone.svg";
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>You are in the desktop !</h2>
-    <p>
-      Go and call us to the <strong>( 1+900 9546 )</strong> or fill the form in get
-      an offer !
-    </p>
+    <h2>call us or send a message !</h2>
+    <div class="numberphone">
+      <p>
+        <span> Get an offer for your car :</span> (+1 984-274-5081)
+        <br />
+        <br />
+
+        <span> Go and ask to buy car parts :</span>(+1 984 400-1694)
+      </p>
+    </div>
+    <div class="atention_hours">
+      <span> The office hours are</span>
+      <ul>
+        <li>Monday to Friday</li>
+        <li>8:00 AM - 4:00 PM</li>
+      </ul>
+    </div>
     <a href="#getoffer" id="open-modal-btn" class="navbar__cta--phone ctabtn">
       Get an Offer</a
     >
@@ -68,6 +79,32 @@ import iconphone from "../assets/phone.svg";
 <script src="../scripts/menuHandle.js"></script>
 
 <style>
+  .numberphone {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    padding: 1rem 0;
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
+  }
+  .atention_hours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: solid var(--secundaryColor) 1px;
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+  }
+  .atention_hours ul {
+    padding: 0;
+  }
+  .atention_hours span {
+    font-weight: bold;
+  }
   .icon_menu,
   .icon_close {
     fill: #fff;
@@ -99,23 +136,19 @@ import iconphone from "../assets/phone.svg";
     background-color: var(--primaryColor);
     margin: 10% auto;
     padding: 20px;
-    border: none;
-    width: 80%;
+
     max-width: 600px;
     border-radius: 5px;
-    height: 40vh;
+    height: auto;
+  }
+  .modal-content p span {
+    font-weight: bold;
   }
   .modal-content h2 {
-    font-family: "Bebas Neue", cursive;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 35px;
   }
-  .modal-content p {
-    font-size: 1em;
-    width: 30ch;
-    text-align: center;
-    line-height: 28.5px;
-    margin-top: -1rem;
-  }
+
   .ctabtn {
     margin-right: 0 !important;
   }
@@ -154,6 +187,8 @@ import iconphone from "../assets/phone.svg";
     align-items: center;
     height: 7.5rem;
     padding: var(--paddingAlign);
+    transform: translatey(-100%);
+    animation: slide-in 900ms ease-out forwards;
   }
   .logo {
     max-width: 150px;
@@ -161,7 +196,7 @@ import iconphone from "../assets/phone.svg";
   }
   .nav__list {
     display: flex;
-    font-size: calc(1.5vw);
+    font-size: 16px;
     gap: 1.8rem;
     width: 20%;
     margin-right: 2rem;
@@ -173,9 +208,10 @@ import iconphone from "../assets/phone.svg";
     justify-content: center;
     align-items: center;
     font-family: var(--fontBrand);
-    font-size: calc(2vw);
-    width: calc(16vw);
+    font-size: 20px;
     height: var(--heightButtom);
+    padding: 0.5rem 1.5rem;
+
     background: var(--terciaryColor);
     border: none;
     border-radius: 0.2rem;
@@ -184,13 +220,28 @@ import iconphone from "../assets/phone.svg";
     white-space: nowrap;
     transition: 500ms;
   }
+
+  @keyframes slide-in {
+    to {
+      transform: translateX(0);
+    }
+  }
+
   .navbar__cta--phone:hover {
     cursor: pointer;
     box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
     -webkit-box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
     -moz-box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
   }
-
+  .navbar__cta--phone .iconphone {
+    width: 1.2rem;
+  }
+  .navbar__cta--phone .iconmsg {
+    width: 1.5rem;
+  }
+  .navbar__cta--phone:hover .iconmsg {
+    animation: shake 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  }
   .navbar__cta--phone:hover .iconphone {
     animation: shake 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   }
@@ -231,6 +282,24 @@ import iconphone from "../assets/phone.svg";
     }
   }
 
+  @media screen and (min-width: 1400px) and (max-width: 2559px) {
+    .navbar {
+      margin-top: 2rem;
+      height: 10rem;
+      padding: 0 10rem;
+    }
+    .logo {
+      max-width: 200px;
+      max-height: 200px;
+    }
+    .nav__list {
+      gap: 4rem;
+    }
+    .nav__link {
+      font-size: 25px;
+    }
+  }
+
   @media screen and (max-width: 834px) {
     .navbar {
       padding: 0;
@@ -253,7 +322,7 @@ import iconphone from "../assets/phone.svg";
     }
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1000px) {
     .navbar__menu-toggle {
       margin-top: 2rem;
     }
@@ -292,12 +361,10 @@ import iconphone from "../assets/phone.svg";
       background: #00252edc;
       transform: translateX(2.5rem);
       color: #fff;
-     
     }
     .nav__link {
       font-size: 25px;
       margin-left: 30%;
-      
     }
     .navbar__menu-toggle {
       position: absolute;

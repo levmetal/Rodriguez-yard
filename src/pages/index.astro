@@ -1,29 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-
-
 import Nav from '../components/Nav.astro';
-
 import Hero from '../components/Hero.astro';
 import Benefits from '../components/Benefits.astro';
 import How from '../components/How.astro';
 import Form from '../components/Form.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Footer from '../components/Footer.astro';
+import Services from '../components/Services.astro';
 ---
 
-<Layout title="Rodriguez Yard.">
+
+<Layout title="Top Cash for Cars | We Buy Junk Cars | Rodriguez Salvage Yard">
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+	  
+		gtag('config', 'G-KTTRY5G7W5');
+	  </script>
 	<Nav/>
 	<main>
 		
 		<Hero/>
+		<Services/>
 		<Benefits/>
 		<How/>
 		<Form/>
 		<Testimonials/>
 		
 	</main>
+
 	<Footer/>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KTTRY5G7W5"></script>
+
 </Layout>
+
 

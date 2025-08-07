@@ -5,41 +5,131 @@ import iconphone from "../assets/phone.svg";
 
 <section class="hero" id="hero">
   <section class="hero__info">
-    <h1 class="hero__title">
-      <span>Sell</span> Fast and get <span>cash</span>
+    <h1 class="hero__title" id="headline">
+      <span>Sell</span> and <span> buy </span>Fast and get <span>cash</span>
     </h1>
-    <p class="hero-description">
-      Sell your used or junk car for cash quickly and easily. Get an offer online or call us today.
+    <p class="hero-description" id="subheadline">
+      Sell your used or junk car for cash quickly and take advantage of our offers to buy different car parts .
     </p>
     <section class="hero__buttons">
-      <a type="button" href="tel:+584146159506" class="hero__button hero__button--call"
-        >1+900 9546<img
+      <a
+        type="button"
+        href="tel:+19842745081"
+        class="hero__button hero__button--call"
+        >+1 984-274-5081<img
           class="iconphone"
           src={iconphone}
           alt="icon phone"
-        /></a>
+        /></a
+      >
       <a class="hero__button" href="#getoffer">Get an Offer</a>
     </section>
+    <section class="social">
+      <a
+        href="https://www.facebook.com/profile.php?id=100090406220454"
+        target="_blank"
+      >
+        <svg
+          class="face"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          ><path
+            fill="currentColor"
+            d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
+          ></path></svg
+        ></a
+      >
+      <a
+        href="https://www.google.com/maps/place/Rodriguez+Salvage+Yard/@35.57192,-78.4007095,15z/data=!4m2!3m1!1s0x0:0x933033b7f85aff18?sa=X&ved=2ahUKEwiwq_D-z97-AhVXRzABHQSTBKsQ_BJ6BAhqEAk"
+        target="_blank"
+      >
+        <svg
+          class="google"
+          xmlns="http://www.w3.org/2000/svg"
+          width="512"
+          height="512"
+          viewBox="0 0 512 512"
+          ><path
+            fill="currentColor"
+            d="m473.16 221.48l-2.26-9.59H262.46v88.22H387c-12.93 61.4-72.93 93.72-121.94 93.72c-35.66 0-73.25-15-98.13-39.11a140.08 140.08 0 0 1-41.8-98.88c0-37.16 16.7-74.33 41-98.78s61-38.13 97.49-38.13c41.79 0 71.74 22.19 82.94 32.31l62.69-62.36C390.86 72.72 340.34 32 261.6 32c-60.75 0-119 23.27-161.58 65.71C58 139.5 36.25 199.93 36.25 256s20.58 113.48 61.3 155.6c43.51 44.92 105.13 68.4 168.58 68.4c57.73 0 112.45-22.62 151.45-63.66c38.34-40.4 58.17-96.3 58.17-154.9c0-24.67-2.48-39.32-2.59-39.96Z"
+          ></path></svg
+        >
+      </a>
+    </section>
   </section>
-  <img class="hero__image" src={heroImage} alt="A car being towed away." />
+
+  <img
+    class="hero__image"
+    id="heroimg"
+    src={heroImage}
+    alt="A car being towed away."
+  />
 </section>
 
 <style>
   .hero {
+    display: flex;
     position: relative;
-    height: calc(100vh - 8rem);
+ 
+      min-height: calc(100vh - 7rem);
+   
     width: 100%;
+    z-index: 100;
+   
   }
   .hero__info {
     position: relative;
     height: 100%;
     margin-right: 0;
     text-align: left;
-
+    margin-top: -2rem;
     margin-left: 8em;
     width: 50%;
     z-index: 10;
+    transform: translateX(-100%);
+    animation: slide-in 900ms ease-out forwards;
   }
+
+  .social {
+    background: transparent;
+    display: flex;
+    justify-content: start;
+    gap: 2rem;
+    align-items: center;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 0.2rem;
+
+    margin-top: 2rem;
+    transition: 500ms;
+  }
+  .social:hover {
+    background: var(--terciaryColor);
+    cursor: pointer;
+    box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
+    -webkit-box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
+    -moz-box-shadow: 8px 8px 0px 0 rgba(101, 157, 167, 0.3);
+  }
+  .face {
+    width: 40px;
+    height: auto;
+    transition: 500ms;
+  }
+  a:hover .face {
+    transform: translate(-2px, -10px);
+  }
+
+  .google {
+    max-width: 35px;
+    height: auto;
+    transition: 500ms;
+  }
+  a:hover .google {
+    transform: translate(-2px, -10px);
+  }
+
   .hero__title,
   .hero-description {
     text-align: start;
@@ -60,14 +150,14 @@ import iconphone from "../assets/phone.svg";
   }
   .hero__info .hero-description {
     width: 45ch;
-    line-height: 1.5em;
+    font-size: 16px;
+    line-height: 25px;
   }
 
   .hero__buttons {
     display: flex;
     gap: 2.1rem;
     margin-top: 3rem;
-    
   }
   .hero__buttons .hero__button--call {
     display: none;
@@ -122,15 +212,15 @@ import iconphone from "../assets/phone.svg";
     color: var(--white);
     align-items: center;
     font-family: var(--fontBrand);
-    font-size: calc(2vw);
+    font-size: 30px;
     height: var(--heightButtom);
     width: var(--widhtButton);
-    padding: 0 1rem;
+    padding: 0.5rem 1.5rem;
     background-color: var(--terciaryColor);
     border-radius: 0.2rem;
     border: none;
     letter-spacing: 0.1rem;
-    white-space: nowrap; 
+    white-space: nowrap;
     transition: 500ms;
   }
   .hero__button:hover {
@@ -144,13 +234,50 @@ import iconphone from "../assets/phone.svg";
     position: absolute;
     top: -3rem;
     right: 0;
+
     max-width: 50%;
     height: auto;
+    transform: translateX(100%);
+    animation: slide-in 900ms ease-out forwards;
+  }
+
+  @keyframes slide-in {
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @media screen and (min-width: 1400px) and (max-width: 2559px) {
+    .hero {
+      padding: 0 8em;
+      min-height: calc(100vh - 15rem);
+    }
+    .hero__info{
+      margin-left: 3rem;
+    }
+    .hero__info .hero__title {
+      font-size: 110px;
+    }
+    .hero-description {
+      font-size: 25px;
+    }
+    .hero__image {
+      height: 90%;
+      width: auto;
+      right: 10rem;
+    }
+
+    .social {
+      margin-top: 8rem;
+    }
   }
 
   @media (max-width: 834px) {
+    .social{
+      margin-top: 7rem;
+    }
     .hero {
-      height: 650px;
+      max-height:100vh ;
     }
     .hero__info {
       margin: 0;
@@ -169,7 +296,7 @@ import iconphone from "../assets/phone.svg";
       padding: 0;
     }
     .hero__button {
-      height: 44px;
+      height: 2.5rem;
     }
   }
 
@@ -206,7 +333,6 @@ import iconphone from "../assets/phone.svg";
       margin: 0 auto;
       flex-direction: column;
       width: auto;
-      
     }
 
     .hero__button {
@@ -214,9 +340,8 @@ import iconphone from "../assets/phone.svg";
       width: 12rem;
       height: 3.5rem;
       font-size: 20px;
-      
     }
-    .hero__buttons .hero__button--call  {
+    .hero__buttons .hero__button--call {
       display: flex;
       width: 12rem;
       gap: 2rem;

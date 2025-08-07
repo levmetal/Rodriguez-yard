@@ -1,0 +1,190 @@
+<form
+    class="getoffer__form"
+    action="https://api.web3forms.com/submit"
+    method="POST"
+>
+    <input
+        type="hidden"
+        name="access_key"
+        value="4142ef25-3bac-4eda-b8af-49b6f7b64e44"
+    />
+    <label for="nombre"
+        >Full Name:
+
+        <input type="text" id="nombre" name="nombre" required />
+    </label>
+    <label for="phone"
+        >Phone:
+
+        <input
+            type="number"
+            id="phone"
+            name="phone"
+            required
+            class="input__tel"
+        />
+    </label>
+
+    <label for="correo"
+        >E-mail:
+
+        <input type="email" id="correo" name="correo" required />
+    </label>
+
+    <label>
+        Wheels:
+        <select name="wheels">
+          <option value="yes">Yes</option>
+          <option value="no">Not</option>
+        </select>
+      </label>
+      <br>
+      <label>
+        Rims:
+        <select name="rims">
+          <option value="yes">Yes</option>
+          <option value="no">Not</option>
+        </select>
+      </label>
+      <br>
+      <label>
+        Engine:
+        <select name="engine">
+          <option value="yes">Yes</option>
+          <option value="no">Not</option>
+        </select>
+      </label>
+      <br>
+      <label>
+        Transmission:
+        <select name="transmission">
+          <option value="yes">Yes</option>
+          <option value="no">Not</option>
+        </select>
+      </label>
+      <br>
+      <label>
+        Catalyst:
+        <select name="catalyst">
+          <option value="yes">Yes</option>
+          <option value="no">Not</option>
+        </select>
+      </label>
+      <br>
+      <label>
+        Battery:
+        <select name="battery">
+          <option value="yes">Yes</option>
+          <option value="no">Not</option>
+        </select>
+      </label>
+      <br>
+      <label>
+        Model:
+        <input type="text" name="model">
+      </label>
+      <br>
+      <label>
+        Year:
+        <input type="text" name="year">
+      </label>
+      <br>
+      <input type="submit" value="Submit">
+
+    <label for="descripcion"
+        >Vehicle Description:
+
+        <textarea id="descripcion" name="descripcion" class="textarea" required
+        ></textarea>
+    </label>
+    <input
+        type="hidden"
+        name="redirect"
+        value="https://web3forms.com/success"
+    />
+    <input type="submit" value="Get an Offer" class="cta" />
+</form>
+
+<style>
+    .input__tel::-webkit-outer-spin-button,
+    .input__tel::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .input__tel {
+        -moz-appearance: textfield;
+    }
+    .textarea {
+        border: none;
+    }
+
+    .getoffer__form {
+        margin-top:2rem ;
+        border-radius: 0.2rem;
+        background: var(--secundaryColor);
+        padding: 2rem;
+        z-index: 100;
+        border: solid red;
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        height: 1.5rem;
+        border: none;
+
+        margin-top: 0.6rem;
+    }
+    textarea {
+        width: 100%;
+        min-height: 5rem;
+        margin-top: 0.6rem;
+        resize: none;
+    }
+
+    label {
+        display: block;
+        width: 70%;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 1.1rem;
+        color: var(--darkletter);
+    }
+    .cta {
+        display: flex;
+        justify-content: center;
+        color: var(--white);
+        align-items: center;
+        font-family: var(--fontBrand);
+        font-size: var(--fontSizeButtom);
+        width: 72%;
+        height: 3.5rem;
+        font-size: var(--fontSizeButtom);
+        padding: 0;
+
+        background-color: var(--terciaryColor);
+        border-radius: 0.2rem;
+        border: none;
+        margin-top: 2rem;
+        transition: 500ms;
+    }
+    .cta:hover {
+        cursor: pointer;
+        box-shadow: 8px 8px 0px 0 rgba(0, 66, 85, 0.3);
+        -webkit-box-shadow: 8px 8px 0px 0 rgba(0, 66, 85, 0.3);
+        -moz-box-shadow: 8px 8px 0px 0 rgba(0, 66, 85, 0.3);
+    }
+
+    @media screen and (max-width: 1399px) {
+ .getoffer__form{
+    display: none;
+ }
+}
+
+</style>

@@ -10,7 +10,7 @@ import arrow from "../assets/arrow.svg";
         <span> How it works</span>
     </h2>
 
-    <div class="container__card">
+    <div class="container__card" id="container-card">
         <article class="card">
             <h3>get a offer for your vehicle</h3>
             <img src={form} alt="icon of form" />
@@ -42,10 +42,31 @@ import arrow from "../assets/arrow.svg";
 </section>
 
 <style>
+    @media screen and (min-width: 1400px) and (max-width: 2559px) {
+        #container-card{
+            justify-content: center ;
+            gap: 3rem;
+        }
+        .card{
+            height: auto;
+            width: 100px;
+           
+        }
+        .card p{
+        width: 20ch;
+    }
+     h3{
+        
+        width: 20ch;
+    }
+}
+        
+   
+  
     .howitworks {
         height: auto;
         background-color: var(--primaryColor);
-        padding: 2.5em 8em;
+        padding: 4.5em 8em;
     }
     .howitworks__title{
         display: flex;
@@ -74,8 +95,8 @@ import arrow from "../assets/arrow.svg";
         display: flex;
         flex-direction: column;
         gap: 0;
-        height: 22rem;
-        width: calc(32vw);
+        height: 26rem;
+        width: auto;
         justify-content: space-around;
         align-items: center;
         padding: 0 1.5rem;
@@ -86,37 +107,27 @@ import arrow from "../assets/arrow.svg";
     }
     .card h3{
         font-family: var(--fontBrand);
-        font-size: calc(2vw);
+        font-size: 28px;
         font-weight: 500;
     }
     .card img{
-        max-width: 5rem;
-        max-height: 5rem;
+        width: clamp(4rem,50%,6rem);
+        
+        height: auto;
     }
     .card p{
-        font-size: calc(1.5vw);
-        line-height: 1.1em;
+        font-size: 16px;
+        line-height: 25px;
+        text-align: left;
     }
     .arrow{
-        max-width: 6rem;
+
+        width: clamp(2.4rem ,5%, 6rem);
         max-height: 6rem;
     }
 
-    @media screen and (max-width: 834px){
-        .howitworks {
-       padding: 2rem 1rem;
-    }
-    .arrow{
-        max-width: 4rem;
-        max-height: 4rem;
-    }
-    .card p{
-        font-size: calc(1.5vw);
-        line-height: 1.1em;
-        text-align: start;
-    }
-    }
-    @media screen and (max-width: 700px){
+    
+    @media screen and (max-width: 900px){
         .howitworks {
        padding: 2rem 0;
        height: auto;
@@ -129,7 +140,7 @@ import arrow from "../assets/arrow.svg";
 
     .card{
         height: auto;
-        width: 60%;
+        width: 14rem;
         padding: 1.5rem;
         gap: 1rem;
     }

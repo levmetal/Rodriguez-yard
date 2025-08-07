@@ -6,47 +6,134 @@ import imgform from "../assets/formimg.webp";
     <img src={imgform} alt="A car being towed away" class="imgform" />
     <div class="container__form">
         <h2 class="section__title"><span>Get an offer</span></h2>
-        <form class="getoffer__form" action="https://api.web3forms.com/submit" method="POST">
-            
-            <input type="hidden" name="access_key" value=3583197a-7143-4414-b21e-527d77cfd62a>
-            <label for="nombre">Full Name:
+        <form
+            class="getoffer__form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+        >
+            <input
+                type="hidden"
+                name="access_key"
+                value="ddbd913a-162d-40f8-82f9-83578a866017"
+            />
+            <label for="name"
+                >Full Name:
 
-                <input type="text" id="nombre" name="nombre" required />
+                <input type="text" id="name" name="name" required  placeholder="Write your name"/>
             </label>
-            <label for="phone">Phone: 
+            <label for="phone"
+                >Phone:
 
                 <input
-                type="number"
-                id="phone"
-                name="phone"
-                required
-                class="input__tel"
+                    type="number"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="input__tel"
+                    placeholder="Write your phone"
                 />
             </label>
 
-            <label for="phone">zip-code:
+            <label for="email"
+                >E-mail:
 
-                <input type="text" id="zip-code" name="zip-code" required />
+                <input type="email" id="coemailrreo" name="email" required  placeholder="Write your email"/>
             </label>
-            <label for="correo">E-mail:
+            <label for="make">
+                Make it by:
+                <input type="text" name="make"  placeholder="Write how make the car"/>
+            </label>
+         
+            <label for="model">
+                Model:
+                <input type="text" name="model"  placeholder="Write the model of the car"/>
+            </label>
+         
+            <label for="year">
+                Year:
+                <input type="text" name="year"  placeholder="Write the year of the car"/>
+            </label>
+            <div class="grid-container">
+            <label for="wheels">
+                Wheels: <br />
+                <select name="wheels">
+                    <option value="yes">Yes</option>
+                    <option value="no">Not</option>
+                </select>
+            </label>
+         
+            <label for="rims">
+                Rims: <br />
+                <select name="rims">
+                    <option value="yes">Yes</option>
+                    <option value="no">Not</option>
+                </select>
+            </label>
+           
+            <label for="engine">
+                Engine: <br />
+                <select name="engine">
+                    <option value="yes">Yes</option>
+                    <option value="no">Not</option>
+                </select>
+            </label>
+          
+            <label for="transmission">
+                Transmission: <br />
+                <select name="transmission">
+                    <option value="yes">Yes</option>
+                    <option value="no">Not</option>
+                </select>
+            </label>
+           
+            <label for="catalyst">
+                Catalyst: <br />
+                <select name="catalyst">
+                    <option value="yes">Yes</option>
+                    <option value="no">Not</option>
+                </select>
+            </label>
+           
+            <label for="battery">
+                Battery: <br />
+                <select name="battery">
+                    <option value="yes">Yes</option>
+                    <option value="no">Not</option>
+                </select>
+            </label>
+            </div>
+           
 
-                <input type="email" id="correo" name="correo" required />
-            </label>
-            <label for="descripcion">Vehicle Descripcion:
+            <label for="description"
+                >Vehicle Details:
 
                 <textarea
-                id="descripcion"
-                name="descripcion"
-                class="textarea"
-                required></textarea>
+                    id="description"
+                    name="description"
+                    class="textarea"
+                    required
+                    placeholder="Vehicle address and other extra information ..."
+                    ></textarea>
             </label>
-            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <input
+                type="hidden"
+                name="redirect"
+                value="https://web3forms.com/success"
+            />
             <input type="submit" value="Get an Offer" class="cta" />
         </form>
     </div>
 </section>
 
 <style>
+  .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
     .input__tel::-webkit-outer-spin-button,
     .input__tel::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -56,7 +143,7 @@ import imgform from "../assets/formimg.webp";
     .input__tel {
         -moz-appearance: textfield;
     }
-    .textarea{
+    .textarea {
         border: none;
     }
     .getoffer {
@@ -84,23 +171,36 @@ import imgform from "../assets/formimg.webp";
         padding: 0 1.5rem;
         margin-top: -1.2rem;
     }
-
+    .container__form {
+        padding: 4rem 0;
+    }
     .imgform,
     .container__form {
         flex: 1;
-
         background-color: var(--secundaryColor);
     }
     .imgform {
         width: 50%;
         object-fit: cover;
+        filter: opacity(0.6) drop-shadow(0 0 0 var(--secundaryColor));
+    }
+    .imgform::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5; /* Cambia el valor de opacidad según lo desees */
+        background-color: black;
     }
     .getoffer__form {
         width: 70%;
-        padding-bottom: 2rem;
         margin: 0 auto;
-        margin-top: 6rem;
         display: flex;
+        margin-top: 4rem;
+        padding-bottom: 2rem;
         flex-direction: column;
     }
 
@@ -108,18 +208,44 @@ import imgform from "../assets/formimg.webp";
         width: 100%;
         border: none;
         height: 2rem;
-        margin-bottom: 1rem;
         border: none;
+        margin-bottom: 1rem;
         margin-top: 0.6rem;
+        padding:0 1rem;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 0.2rem;
     }
     textarea {
-        width: 100%;
+        width: calc(100% - 2rem);
         height: 8rem;
+        margin-top: 0.6rem;
         resize: none;
+        border-radius: 0.2rem;
+        padding: 1rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+
+    }
+    textarea::placeholder {
+ 
+  font-weight: 400;
+}
+    select {
+        background-color: var(--terciaryColor);
+        color: var(--white);
+        border-radius: 0.2rem;
+        font-family: var(--fontBrand);
+        padding: 0.5rem 0.5rem;
+        margin-top: 0.5rem;
+    }
+    option {
+        color: var(--white);
     }
 
     label {
-        display: block;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         font-size: 16px;
         font-weight: bold;
         margin-bottom: 1.1rem;
@@ -131,9 +257,10 @@ import imgform from "../assets/formimg.webp";
         color: var(--white);
         align-items: center;
         font-family: var(--fontBrand);
-        font-size: var(--fontSizeButtom);
-        height: var(--heightButtom);
-        width: var(--widhtButtom);
+        width: 100%;
+        height: 3.5rem;
+        font-size: 20px;
+        padding: 0;
         background-color: var(--terciaryColor);
         border-radius: 0.2rem;
         border: none;
@@ -147,9 +274,12 @@ import imgform from "../assets/formimg.webp";
         -moz-box-shadow: 8px 8px 0px 0 rgba(0, 66, 85, 0.3);
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 900px) {
         .getoffer .imgform {
             display: none;
+        }
+        .getoffer__form {
+            width: 65%;
         }
         .cta {
             width: 100%;
